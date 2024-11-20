@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume Analyzer</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css" rel="stylesheet">
+
+  <!-- Google Fonts for better typography -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- Custom CSS for additional styling -->
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f8f9fa;
+    }
+    
+    nav {
+      background-color: #007bff;
+    }
+
+    .navbar-brand, .navbar-nav .nav-link {
+      color: #ffffff !important;
+    }
+
+    .navbar-brand:hover, .navbar-nav .nav-link:hover {
+      color: #ffeb3b !important;
+    }
+
+    .navbar-toggler-icon {
+      background-color: #ffffff !important;
+    }
+
+    .container {
+      max-width: 960px;
+    }
+
+    h2 {
+      color: #343a40;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+
+    .card {
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .card h5 {
+      font-size: 1.1rem;
+      color: #6c757d;
+      margin-bottom: 1rem;
+    }
+
+    .btn {
+      font-weight: 600;
+    }
+
+    .btn-success {
+      background-color: #28a745;
+      border-color: #28a745;
+    }
+
+    .btn-success:hover {
+      background-color: #218838;
+      border-color: #1e7e34;
+    }
+
+    .btn-primary {
+      background-color: #007bff;
+      border-color: #007bff;
+    }
+
+    .btn-primary:hover {
+      background-color: #0056b3;
+      border-color: #004085;
+    }
+
+    .text-muted {
+      font-size: 0.9rem;
+    }
+
+    footer {
+      background-color: #f1f1f1;
+    }
+
+    footer .text-muted {
+      color: #6c757d;
+    }
+
+    .upload-container {
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      padding: 3rem 2rem;
+    }
+
+    .upload-container h5 {
+      font-weight: 600;
+    }
+
+    .upload-container .form-control {
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header Section -->
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="img/logo.png" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
+        Resume Analyzer
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="skills.html">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Features</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Pricing</a></li>
+          <li class="nav-item"><a class="btn btn-primary" href="#" role="button">Sign In</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Section -->
+  <div class="container text-center my-5">
+    <h2 class="text-uppercase">Is Your Resume Good Enough?</h2>
+    <p class="text-muted">A free and fast AI resume checker doing 16 crucial checks to ensure your resume is ready to perform and get you interview callbacks.</p>
+
+    <!-- File Upload Card -->
+    <div class="card upload-container mx-auto my-4">
+      <h5><i class="bi bi-upload"></i> Drop your resume here or choose a file</h5>
+      <form>
+        <input type="file" id="resumeUpload" class="form-control mb-3">
+        <button class="btn btn-success w-100" id="uploadBtn"><i class="bi bi-file-earmark-arrow-up"></i> Upload Your Resume</button>
+      </form>
+      <p class="text-muted small mt-2"><i class="bi bi-shield-check"></i> Privacy guaranteed</p>
+    </div>
+  </div>
+
+  <!-- Footer Section -->
+  <footer class="py-3 mt-auto">
+    <div class="container text-center">
+      <p class="mb-0">© 2024 Resume Analyzer | All Rights Reserved</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS and jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+  <div class="card my-4 mx-auto">
+    <h5 class="card-header bg-primary text-white">Your Resume Analysis</h5>
+    <div class="card-body">
+      <h6>Score: <span class="text-success">85%</span></h6>
+      <ul class="list-group">
+        <li class="list-group-item">✅ Strong experience section</li>
+        <li class="list-group-item">✅ Keywords match your industry</li>
+        <li class="list-group-item text-warning">⚠ Add more measurable achievements</li>
+        <li class="list-group-item text-danger">❌ Missing cover letter integration</li>
+      </ul>
+      <button class="btn btn-primary mt-3">Download Suggestions</button>
+    </div>
+  </div>
+  
+
+
+  <div class="card mt-4">
+    <h5 class="card-header bg-primary text-white">Job Description Matching</h5>
+    <div class="card-body">
+      <label for="jobDescription" class="form-label">Paste Job Description:</label>
+      <textarea id="jobDescription" class="form-control" rows="4"></textarea>
+      <button class="btn btn-success mt-2">Match Skills</button>
+    </div>
+  </div>
+  
+
+
+
+  <div class="container my-5">
+    <h2 class="text-center text-uppercase">Key Skills</h2>
+    <p class="text-center text-muted">Highlight your skills and showcase your expertise for better resume performance.</p>
+    <div class="row text-center">
+      <!-- Skill Card 1 -->
+      <div class="col-md-4 mb-4">
+        <div class="card h-100 shadow">
+          <div class="card-body">
+            <i class="bi bi-code-slash fs-1 text-primary"></i>
+            <h5 class="card-title mt-3">Technical Skills</h5>
+            <p class="card-text text-muted">Programming, Database Management, Cloud Computing, and AI/ML.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Skill Card 2 -->
+      <div class="col-md-4 mb-4">
+        <div class="card h-100 shadow">
+          <div class="card-body">
+            <i class="bi bi-people fs-1 text-success"></i>
+            <h5 class="card-title mt-3">Soft Skills</h5>
+            <p class="card-text text-muted">Teamwork, Communication, Leadership, and Time Management.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Skill Card 3 -->
+      <div class="col-md-4 mb-4">
+        <div class="card h-100 shadow">
+          <div class="card-body">
+            <i class="bi bi-pie-chart fs-1 text-warning"></i>
+            <h5 class="card-title mt-3">Analytical Skills</h5>
+            <p class="card-text text-muted">Data Analysis, Critical Thinking, Problem-Solving, and Decision-Making.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+</body>
+</html>
