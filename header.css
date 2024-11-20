@@ -1,0 +1,16 @@
+/* Navbar Styling */
+nav {
+    background-color: #1f1f1f; /* Dark navbar */
+  }
+
+  .navbar-brand, .navbar-nav .nav-link {
+    color: #ffffff !important;
+  }
+
+  .navbar-brand:hover, .navbar-nav .nav-link:hover {
+    color: #fff6a3 !important;
+  }
+
+  .navbar-toggler-icon {
+    background-color: #ffffff !important;
+  }

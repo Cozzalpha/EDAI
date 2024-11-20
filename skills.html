@@ -6,12 +6,16 @@
   <title>Skills | Resume Analyzer</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="header.css">
+
   <style>
     body {
       font-family: 'Poppins', sans-serif;
+      background-color: #121212;
+      color: #e0e0e0;
     }
     .hero {
-      background-color: #007bff;
+      background-color: #333;
       color: #fff;
       padding: 4rem 0;
       text-align: center;
@@ -23,42 +27,82 @@
       padding: 3rem 0;
     }
     .card {
+      background-color: #1e1e1e;
+      border: 1px solid #444;
       transition: transform 0.3s;
     }
     .card:hover {
       transform: translateY(-10px);
+      box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
     }
     .quote-section {
-      background-color: #f8f9fa;
+      background-color: #232323;
       padding: 3rem 0;
     }
     .quote {
       font-style: italic;
       font-size: 1.2rem;
-      color: #6c757d;
+      color: #aaa;
     }
     .icon-section {
       padding: 3rem 0;
-      background-color: #e9ecef;
+      background-color: #1a1a1a;
     }
     .icon-section .icon-card {
-      background-color: #fff;
+      background-color: #2c2c2c;
       border-radius: 8px;
       padding: 2rem;
       text-align: center;
       transition: box-shadow 0.3s;
     }
     .icon-section .icon-card:hover {
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
     }
     footer {
-      background-color: #343a40;
-      color: #fff;
+      background-color: #1b1b1b;
+      color: #aaa;
       padding: 1rem 0;
+    }
+    .navbar {
+      background-color: #232323;
+    }
+    .navbar .nav-link, .navbar .navbar-brand {
+      color: #e0e0e0;
+    }
+    .navbar .nav-link:hover {
+      color: #007bff;
+    }
+    .btn-primary {
+      background-color: #007bff;
+      border: none;
+    }
+    .btn-primary:hover {
+      background-color: #0056b3;
     }
   </style>
 </head>
 <body>
+  <!-- Header Section -->
+  <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="ailogo.png" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
+        Resume Analyzer
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="homepage.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="skills.html">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Features</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Pricing</a></li>
+          <li class="nav-item"><a class="btn btn-primary" href="#" role="button">Sign In</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
   <!-- Header Section -->
   <header class="hero">
     <div class="container">
@@ -67,40 +111,33 @@
     </div>
   </header>
 
-  <!-- Skills Cards Section -->
-  <main class="skill-section">
+  <section class="icon-section">
     <div class="container">
       <div class="row">
-        <div class="col-md-6 col-lg-4 mb-4">
-          <div class="card h-100 shadow">
-            <div class="card-body text-center">
-              <i class="bi bi-code-slash fs-1 text-primary"></i>
-              <h5 class="card-title mt-3">Technical Skills</h5>
-              <p class="card-text">Programming, Database Management, Cloud Computing, and AI/ML.</p>
-            </div>
+        <div class="col-md-4 mb-4">
+          <div class="icon-card">
+            <i class="bi bi-code-slash fs-1 text-primary"></i>
+            <h5 class="mt-3">Technical Skills</h5>
+            <p>Programming, Database Management, Cloud Computing, and AI/ML.</p>
           </div>
         </div>
-        <div class="col-md-6 col-lg-4 mb-4">
-          <div class="card h-100 shadow">
-            <div class="card-body text-center">
-              <i class="bi bi-people fs-1 text-success"></i>
-              <h5 class="card-title mt-3">Soft Skills</h5>
-              <p class="card-text">Teamwork, Communication, Leadership, and Time Management.</p>
-            </div>
+        <div class="col-md-4 mb-4">
+          <div class="icon-card">
+            <i class="bi bi-people fs-1 text-success"></i>
+            <h5 class="mt-3">Soft Skills</h5>
+            <p>Teamwork, Communication, Leadership, and Time Management.</p>
           </div>
         </div>
-        <div class="col-md-6 col-lg-4 mb-4">
-          <div class="card h-100 shadow">
-            <div class="card-body text-center">
-              <i class="bi bi-pie-chart fs-1 text-warning"></i>
-              <h5 class="card-title mt-3">Analytical Skills</h5>
-              <p class="card-text">Data Analysis, Critical Thinking, Problem-Solving, and Decision-Making.</p>
-            </div>
+        <div class="col-md-4 mb-4">
+          <div class="icon-card">
+            <i class="bi bi-pie-chart fs-1 text-warning"></i>
+            <h5 class="mt-3">Analytical Skills</h5>
+            <p>Data Analysis, Critical Thinking, Problem-Solving, and Decision-Making.</p>
           </div>
         </div>
       </div>
     </div>
-  </main>
+  </section>
 
   <!-- Inspirational Quote Section -->
   <section class="quote-section text-center">
