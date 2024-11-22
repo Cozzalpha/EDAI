@@ -3,241 +3,217 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Resume Analyzer</title>
+  <title>Prep-Wise Ai</title>
+
+  <!-- Meta Description for SEO -->
+  <meta name="description" content="Prep-Wise Ai: Your AI-powered career preparation tool for resume reviews, mock interviews, and advanced career analysis.">
 
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- Bootstrap Icons -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css" rel="stylesheet">
-
-  <!-- Google Fonts for better typography -->
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="header.css">
 
   <style>
-    /* General Body Styling */
+    /* General Styling */
     body {
       font-family: 'Poppins', sans-serif;
-      background-color: #121212; /* Dark background for body */
-      color: #e0e0e0; /* Light text color for readability */
-    }
-
-    /* Container Styling */
-    .container {
-      max-width: 960px;
-    }
-
-    /* Header Section */
-    h2 {
+      background-color: #121212;
       color: #ffffff;
-      font-weight: 600;
-      margin-bottom: 1.5rem;
+      margin: 0;
+      padding: 0;
     }
 
-    /* Cards Styling */
-    .card {
-      background-color: #2c2c2c; /* Dark background for cards */
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-      color: #e0e0e0; /* Light text color inside cards */
+    .navbar {
+      background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black */
     }
 
-    .card h5 {
-      font-size: 1.1rem;
-      color: #b0b0b0;
-      margin-bottom: 1rem;
+    .navbar-brand {
+      font-size: 1.5rem;
+      font-weight: bold;
     }
 
-    .card-header {
-      background-color: #333333; /* Darker header for cards */
+    .navbar-nav .nav-link {
+      color: #ffffff;
+    }
+
+    .navbar-nav .nav-link:hover {
+      color: #00aaff; /* Highlight color on hover */
     }
 
     .btn {
       font-weight: 600;
+      transition: transform 0.3s ease-in-out;
     }
 
-    /* Button Styling */
-    .btn-success {
-      background-color: #28a745;
-      border-color: #28a745;
+    .btn:hover {
+      transform: scale(1.1);
     }
 
-    .btn-success:hover {
-      background-color: #218838;
-      border-color: #1e7e34;
+    /* Gradient Background Animation */
+    .gradient-background {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      background: linear-gradient(45deg, #ff4e50, #1c92d2, #f9d423);
+      background-size: 300% 300%;
+      animation: gradientAnimation 10s ease infinite;
     }
 
-    .btn-primary {
-      background-color: #007bff;
-      border-color: #007bff;
+    @keyframes gradientAnimation {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
     }
 
-    .btn-primary:hover {
-      background-color: #0056b3;
-      border-color: #004085;
+    .gradient-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      color: #ffffff;
     }
 
-    /* Footer Styling */
+    .gradient-content h2 {
+      font-size: 3rem;
+      font-weight: bold;
+    }
+
+    .gradient-content p {
+      font-size: 1.25rem;
+    }
+
+    /* Main Content Section */
+    .main-content {
+      margin-top: -80px; /* Overlap the fading background */
+      padding-top: 100px; /* Provide breathing space */
+      background-color: #121212;
+      z-index: 3;
+    }
+
+    .section-heading {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 1.5rem;
+    }
+
     footer {
       background-color: #1f1f1f;
       padding: 20px 0;
     }
 
-    footer .text-muted {
-      color: #b0b0b0;
-    }
-
-    /* Video Section */
-    .container-fluid {
-      position: relative;
-      min-height: 60vh;
-      overflow: hidden;
-    }
-
-    #bgVideo {
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: -2;
-      object-fit: cover;
-      width: 100%;
-      height: 60vh;
-    }
-
-    .video-overlay {
-      background-color: rgba(0, 0, 0, 0.5); /* Translucent black overlay */
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: -1;
-      width: 100%;
-      height: 100%;
-    }
-
-    .upload-container {
-      background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent card background */
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    }
-
-    /* Input and Textarea Styles */
-    .form-control {
-      background-color: #3a3a3a;
-      color: #e0e0e0;
-      border: 1px solid #444;
-    }
-
-    .form-control:focus {
-      background-color: #3a3a3a;
-      border-color: #007bff;
+    footer p {
       color: #ffffff;
+      font-size: 0.9rem;
     }
 
-    /* Text Muted */
-    .text-muted {
-      color: rgba(255, 255, 255, 0.7) !important;
-    }
-    .navbar-toggler-icon{
-      background-color: #2c2c2c !important;
+    .navbar-nav .nav-item {
+      margin-right: 10px; /* Add space between navbar items */
     }
 
+    #sign-up {
+      margin-left: 10px; /* Add space between Sign In and Sign Up buttons */
+    }
   </style>
 </head>
 <body>
 
-  <!-- Header Section -->
-  <nav class="navbar navbar-expand-lg navbar-light sticky-top">
-    <div class="container">
-      <a class="navbar-brand" href="#">
-        <img src="ailogo.png" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
-        Resume Analyzer
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="skills.html">Skills</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Features</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Pricing</a></li>
-          <li class="nav-item"><a class="btn btn-primary" href="#" role="button">Sign In</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Main Section -->
-  <div class="container-fluid position-relative p-0">
-    <!-- Background Video -->
-    <video autoplay muted loop id="bgVideo" class="position-absolute w-100">
-      <source src="ai video for website.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-  
-    <!-- Black Translucent Overlay -->
-    <div class="video-overlay position-absolute w-100 h-100"></div>
-  
-    <!-- Overlay Content -->
-    <div class="container text-center position-relative text-white py-5">
-      <h2 class="text-uppercase">Is Your Resume Good Enough?</h2>
-      <p class="text-muted">A free and fast AI resume checker doing 16 crucial checks to ensure your resume is ready to perform and get you interview callbacks.</p>
-  
-      <!-- File Upload Card -->
-      <div class="card upload-container mx-auto my-4">
-        <h5><i class="bi bi-upload"></i> Drop your resume here or choose a file</h5>
-        <form>
-          <input type="file" id="resumeUpload" class="form-control mb-3">
-          <button class="btn btn-success w-100" id="uploadBtn"><i class="bi bi-file-earmark-arrow-up"></i> Upload Your Resume</button>
-        </form>
-        <p class="text-muted small mt-2"><i class="bi bi-shield-check"></i> Privacy guaranteed</p>
-      </div>
-    </div>
-  </div>
-
-
-
-  <!-- Bootstrap JS and jQuery -->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-
-  <div class="card my-4 mx-auto">
-    <h5 class="card-header bg-primary text-white">Your Resume Analysis</h5>
-    <div class="card-body">
-      <h6>Score: <span class="text-success">85%</span></h6>
-      <ul class="list-group">
-        <li class="list-group-item">✅ Strong experience section</li>
-        <li class="list-group-item">✅ Keywords match your industry</li>
-        <li class="list-group-item text-warning">⚠ Add more measurable achievements</li>
-        <li class="list-group-item text-danger">❌ Missing cover letter integration</li>
+<!-- Header Section -->
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <img src="ailogo.png" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
+      Prep-Wise Ai
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto" id="auth-buttons">
+        <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="skills.html">Skills</a></li>
+        <!-- Sign In and Sign Up buttons -->
+        <li class="nav-item" id="sign-in"><a class="btn btn-primary" href="login.html" role="button">Sign In</a></li>
+        <li class="nav-item" id="sign-up"><a class="btn btn-primary" href="signup.html" role="button">Sign Up</a></li>
       </ul>
-      <button class="btn btn-primary mt-3">Download Suggestions</button>
+      <ul class="navbar-nav ms-auto" id="welcome-msg" style="display:none;">
+        <li class="nav-item">
+          <span class="nav-link text-white" id="username">Welcome, [Username!]</span>
+        </li>
+      </ul>
     </div>
   </div>
-  
+</nav>
 
+<!-- Gradient Background Section -->
+<div class="gradient-background">
+  <div class="gradient-content">
+    <h2>Is Your Resume Good Enough?</h2>
+    <p>Your career journey, powered by AI. From resume reviews to mock interviews, we prepare you for success.</p>
+  </div>
+</div>
 
-  <div class="card mt-4">
-    <h5 class="card-header bg-primary text-white">Job Description Matching</h5>
-    <div class="card-body">
-      <label for="jobDescription" class="form-label">Paste Job Description:</label>
-      <textarea id="jobDescription" class="form-control" rows="4"></textarea>
-      <button class="btn btn-success mt-2">Match Skills</button>
+<!-- Main Content Section -->
+<div class="main-content">
+  <div class="container py-5">
+    <h2 class="section-heading text-center">Why Choose Prep-Wise Ai?</h2>
+    <div class="row mt-4">
+      <div class="col-md-4 text-center">
+        <img src="personalized-feedback.jpg" alt="Personalized Feedback" class="img-fluid mb-3" loading="lazy">
+        <h4>Personalized Feedback</h4>
+        <p>Get actionable suggestions tailored to your goals.</p>
+      </div>
+      <div class="col-md-4 text-center">
+        <img src="advanced-analysis.jpg" alt="Advanced Analysis" class="img-fluid mb-3" loading="lazy">
+        <h4>Advanced Analysis</h4>
+        <p>Leverage cutting-edge AI tools to stay ahead in your career.</p>
+      </div>
+      <div class="col-md-4 text-center">
+        <img src="data-privacy.jpg" alt="Data Privacy" class="img-fluid mb-3" loading="lazy">
+        <h4>Data Privacy</h4>
+        <p>Your privacy is our top priority. Your data is always secure.</p>
+      </div>
     </div>
   </div>
-  
+</div>
 
-    <!-- Footer Section -->
-  <footer class="py-3 mt-auto">
-    <div class="container text-center">
-      <p class="mb-0">© 2024 Resume Analyzer | All Rights Reserved</p>
-    </div>
-  </footer>
+<!-- Mock Interview Section -->
+<div class="container py-5">
+  <h2 class="section-heading text-center">Mock Interviews</h2>
+  <p class="text-center">Practice real-world interview scenarios with our AI-driven Mock Interview feature. Refine your skills and get instant feedback to boost your confidence.</p>
+  <div class="text-center mt-4">
+    <a href="mockinterview.html" class="btn btn-primary btn-lg" title="Boost your interview skills with AI-driven practice sessions">Start a Mock AI Interview</a>
+  </div>
+</div>
 
-  <!-- Bootstrap JS and jQuery -->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Footer -->
+<footer class="text-center">
+  <div class="container">
+    <p>&copy; 2024 Prep-Wise Ai. All Rights Reserved.</p>
+    <p>Your ultimate career preparation companion, blending technology with expertise to help you succeed.</p>
+  </div>
+</footer>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  // Check login status on homepage
+  const isLoggedIn = sessionStorage.getItem('isLoggedIn');
+  if (isLoggedIn === 'true') {
+    const username = sessionStorage.getItem('username');
+    document.getElementById('sign-in').style.display = 'none';
+    document.getElementById('sign-up').style.display = 'none';
+    document.getElementById('welcome-msg').style.display = 'block';
+    document.getElementById('username').textContent = `Welcome, ${username}`;
+  }
+</script>
 
 </body>
 </html>

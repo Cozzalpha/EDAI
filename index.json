@@ -1,0 +1,40 @@
+{
+  "dsa_topics": [
+    {
+      "title": "Array",
+      "description": "Learn about arrays,sorting,searching and much more.",
+      "image": "https://media.geeksforgeeks.org/wp-content/cdn-uploads/20230726162247/Array-data-structure.png",  
+      "link": "https://leetcode.com/problemset/all/?topicSlugs=trees"
+    },
+    {
+      "title": "Dynamic Programming",
+      "description": "Master the art of solving problems by breaking them down into simpler subproblems.",
+      "image": "https://www.tutorialspoint.com/data_structures_algorithms/images/dynamic_programming_approach.jpg",  
+      "link": "https://leetcode.com/problemset/all/?topicSlugs=dynamic-programming"
+    },
+    {
+      "title": "Greedy Algorithms",
+      "description": "Learn how to make locally optimal choices to find the global optimum.",
+      "image": "https://miro.medium.com/v2/resize:fit:1400/1*A4z9AEEpIlkCCQxt9GRaGA.png",  
+      "link": "https://leetcode.com/problemset/all/?topicSlugs=greedy"
+    },
+    {
+      "title": "Linked List",
+      "description": "Explore different types of linked lists, operations like reversal, and more.",
+      "image": "https://media.geeksforgeeks.org/wp-content/uploads/20220816144425/LLdrawio.png",  
+      "link": "https://leetcode.com/problemset/all/?topicSlugs=linked-list"
+    },
+    {
+      "title": "Graphs",
+      "description": "Dive into graph traversal algorithms like DFS, BFS, and shortest path algorithms.",
+      "image": "https://www.simplilearn.com/ice9/free_resources_article_thumb/Graph%20Data%20Structure%20-%20Soni/what-is-graphs-in-data-structure.png",  
+      "link": "https://leetcode.com/problemset/all/?topicSlugs=graph"
+    },
+    {
+      "title": "Hashing",
+      "description": "Learn about hash tables and how they are used in efficient data retrieval.",
+      "image": "https://miro.medium.com/v2/resize:fit:913/1*VDRVI-0EfU2v7c43k9IIeA.png",  
+      "link": "https://leetcode.com/problemset/all/?topicSlugs=hash-table"
+    }
+  ]
+}
