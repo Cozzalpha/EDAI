@@ -71,15 +71,17 @@
     .card .btn:hover {
       background-color: #0056b3;
     }
+    .card-img-top {
+      height: 200px;
+      object-fit: cover;
+    }
   </style>
 </head>
 <body>
   <!-- Header Section -->
   <nav class="navbar navbar-expand-lg navbar-light sticky-top">
     <div class="container">
-      <a class="navbar-brand" href="#">
-        Prep-Wise Ai
-      </a>
+      <a class="navbar-brand" href="#">Prep-Wise Ai</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -104,33 +106,7 @@
     <div class="container mt-5">
       <h3 class="text-center mb-4">Top Analytical Skills Resources</h3>
       <div class="row">
-        <div class="col-md-4 mb-4">
-          <div class="card bg-dark text-light h-100">
-            <div class="card-body">
-              <h5 class="card-title">Khan Academy</h5>
-              <p class="card-text">Learn Probability & Statistics to enhance your analytical skills.</p>
-              <a href="https://www.khanacademy.org/math/statistics-probability" target="_blank" class="btn btn-primary">Visit Khan Academy</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 mb-4">
-          <div class="card bg-dark text-light h-100">
-            <div class="card-body">
-              <h5 class="card-title">Coursera</h5>
-              <p class="card-text">Find a variety of Data Analysis courses tailored to your needs.</p>
-              <a href="https://www.coursera.org/courses?query=data%20analysis" target="_blank" class="btn btn-primary">Explore Courses</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 mb-4">
-          <div class="card bg-dark text-light h-100">
-            <div class="card-body">
-              <h5 class="card-title">edX</h5>
-              <p class="card-text">Dive into Data Analysis for Life Sciences and other fields.</p>
-              <a href="https://www.edx.org/course/data-analysis-for-life-sciences" target="_blank" class="btn btn-primary">Learn More</a>
-            </div>
-          </div>
-        </div>
+        <!-- Dynamic cards will be injected here -->
       </div>
     </div>
   </main>
@@ -141,5 +117,30 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <script>
+    // Fetch and render the analytical skills cards dynamically using the JSON data
+    fetch('analytical.json')
+      .then(response => response.json())
+      .then(data => {
+        const cardContainer = document.querySelector('.row');
+        data.resources.forEach(resource => {
+          const card = `
+            <div class="col-md-4 mb-4">
+              <div class="card bg-dark text-light h-100">
+                <img src="${resource.image}" class="card-img-top" alt="${resource.title}">
+                <div class="card-body">
+                  <h5 class="card-title">${resource.title}</h5>
+                  <p class="card-text">${resource.description}</p>
+                  <a href="${resource.link}" target="_blank" class="btn btn-primary">Visit Resource</a>
+                </div>
+              </div>
+            </div>
+          `;
+          cardContainer.innerHTML += card;
+        });
+      })
+      .catch(error => console.log('Error fetching JSON data:', error));
+  </script>
 </body>
 </html>

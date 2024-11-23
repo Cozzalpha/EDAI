@@ -1,0 +1,41 @@
+{
+    "resources": [
+      {
+        "title": "Khan Academy - Probability & Statistics",
+        "description": "Learn Probability & Statistics to enhance your analytical skills.",
+        "link": "https://www.khanacademy.org/math/statistics-probability",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4qX8wH7QBnB4nCurYm3cFpfT6zszX7pfJhA&s"
+      },
+      {
+        "title": "Coursera - Data Analysis Courses",
+        "description": "Find a variety of Data Analysis courses tailored to your needs.",
+        "link": "https://www.coursera.org/courses?query=data%20analysis",
+        "image": "https://assets.datamation.com/uploads/2023/08/dm08172023-what-is-data-analytics-696x455.png"
+      },
+      {
+        "title": "edX - Data Analysis for Life Sciences",
+        "description": "Dive into Data Analysis for Life Sciences and other fields.",
+        "link": "https://www.edx.org/course/data-analysis-for-life-sciences",
+        "image": "https://play-lh.googleusercontent.com/y7_Fws2dAIXamBjYWganflbhHmfZys7KUWCvDnvAey346BMLfB3NvuR4niv07EosJ9lE"
+      },
+      {
+        "title": "Udemy - Excel for Data Analysis",
+        "description": "Master Excel for Data Analysis and build strong analytical skills.",
+        "link": "https://www.udemy.com/course/excel-for-data-analysis/",
+        "image": "https://img-b.udemycdn.com/course/750x422/2511476_4e38_5.jpg"
+      },
+      {
+        "title": "MIT OpenCourseWare - Data Science",
+        "description": "Access free resources for learning Data Science from MIT.",
+        "link": "https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-86x-machine-learning-with-python-from-linear-models-to-deep-learning-spring-2020/",
+        "image": "https://yt3.googleusercontent.com/e1KUKBD5xAGuyy68Y-q3JECx8XkRGYSZLy9DbZfaVZuDPiaTFbgrc67j5VYFBpvQdu8K-xVBTw=s900-c-k-c0x00ffffff-no-rj"
+      },
+      {
+        "title": "Harvard Online Learning - Data Science",
+        "description": "Harvard offers free Data Science courses for various levels.",
+        "link": "https://online-learning.harvard.edu/subject/data-science",
+        "image": "https://yt3.googleusercontent.com/CerY0DEYAMrTcBBltDDBSeuRG5ESPAQLdQ-E5lxwFoOuFShCqZuxly3yF4MTNEJ9MMyjYCDG=s900-c-k-c0x00ffffff-no-rj"
+      }
+    ]
+  }
+  
