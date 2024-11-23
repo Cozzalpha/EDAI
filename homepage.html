@@ -123,10 +123,103 @@
     #sign-up {
       margin-left: 10px; /* Add space between Sign In and Sign Up buttons */
     }
+  /* News Slider Styling */
+  .news-slider-container {
+    width: 100%;
+    overflow: hidden;
+    background-color: #000000; /* Dark background for contrast */
+    padding: 10px 0;
+  }
+
+  .news-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 5px;
+    padding-left: 20px;
+  }
+
+  .news-slider {
+    display: flex;
+    white-space: nowrap; /* Prevent breaking into multiple lines */
+    animation: scroll 20s linear infinite; /* Smooth scrolling animation */
+  }
+
+  .news-item {
+    display: inline-block;
+    margin-right: 30px;
+    font-size: 1rem;
+    white-space: nowrap;
+  }
+
+  .news-item a {
+    text-decoration: none;
+    color: #ffffff;
+  }
+
+  .news-item a:hover {
+    text-decoration: underline;
+  }
+
+  /* Animation */
+  @keyframes scroll {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
   </style>
 </head>
 <body>
+  <div class="container">
+    <div class="news-slider-container">
+      <div class="news-title">Latest News</div>
+      <div class="news-slider" id="newsSlider"></div>
+    </div>
+  </div>
+  
+  <script>
+    const API_URLS = [
+  "https://newsdata.io/api/1/news?apikey=pub_60086cbbd3aa00374601d552e2237ce9f1fce&q=tech%20news",
+  "https://newsdata.io/api/1/news?apikey=pub_60086cbbd3aa00374601d552e2237ce9f1fce&q=job%20interview"
+];
 
+async function fetchNews() {
+  try {
+    const randomAPI = API_URLS[Math.floor(Math.random() * API_URLS.length)];
+    const response = await fetch(randomAPI);
+    const data = await response.json();
+    const news = data.results || [];
+
+    if (news.length > 0) {
+      const newsSlider = document.getElementById("newsSlider");
+
+      // Populate the slider with news items
+      const newsHTML = news.map((item) => {
+        const title = item.title || "Untitled";
+        const link = item.link || "#";
+        return `
+          <div class="news-item">
+            <a href="${link}" target="_blank">${title}</a>
+          </div>`;
+      }).join("");
+
+      // Duplicate the items for seamless scrolling
+      newsSlider.innerHTML = newsHTML + newsHTML;
+    } else {
+      document.getElementById("newsSlider").innerHTML = "<p>No news available.</p>";
+    }
+  } catch (error) {
+    document.getElementById("newsSlider").innerHTML = `<p>Error fetching news: ${error.message}</p>`;
+  }
+}
+
+// Call fetchNews to load data
+fetchNews();
+
+  </script>
   
 
 <!-- Header Section -->
